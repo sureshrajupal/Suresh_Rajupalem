@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suresh Rajupalem Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">S<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <a href="cv.html" target="_blank" class="btn btn-outline" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+          <i class="fa-solid fa-file-lines"></i> CV
+        </a>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Hire Me
+        </button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow"><span class="dot"></span> Open to opportunities &nbsp;·&nbsp; <i class="fa-solid fa-location-dot" style="font-size:0.75rem;"></i> Pune (Current) &nbsp;·&nbsp; Hyderabad &nbsp;·&nbsp; Bangalore</p>
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">Suresh Rajupalem</span> 👋
+      </h1>
+      <p class="hero-subtitle">
+        <span class="role-cycle" id="roleCycle">Data Analyst</span>
+        &nbsp;·&nbsp; HR Executive &nbsp;·&nbsp; Digital Marketer
+      </p>
+      <p class="hero-desc">
+        A multi-skilled professional with an MBA background — turning data into insights as a
+        <strong>Data Analyst</strong>, driving people strategy as an <strong>HR Executive</strong>,
+        and growing brands online as a <strong>Digital Marketer</strong>.
+      </p>
+      <div class="hero-btns">
+        <a href="cv.html" target="_blank" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> View CV</a>
+        <a href="#projects" class="btn btn-outline">Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Projects</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Tools Mastered</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">MBA</span><span class="stat-label">Background</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <img src="assets/profile.jpg" alt="Suresh Rajupalem" class="avatar-photo" />
+        </div>
+      </div>
+      <div class="floating-card card-top">
+        <i class="fa-solid fa-users"></i>
+        <span>HR Executive</span>
+      </div>
+      <div class="floating-card card-bottom">
+        <i class="fa-solid fa-bullhorn"></i>
+        <span>Digital Marketer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Who I Am</p>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card glass-card" data-animate>
+          <div class="about-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>MBA in Finance &amp; HR</h3>
+          <p>Jawaharlal Nehru Technological University, Anantapur &amp; B.Com from VSU Nellore.</p>
+        </div>
+        <div class="about-main glass-card" data-animate>
+          <p>
+            I am <strong>Suresh Rajupalem</strong>, an MBA graduate in <strong>Finance &amp; Human Resources</strong> from <strong>Jawaharlal Nehru Technological University, Anantapur</strong>. I also hold a Bachelor’s degree in <strong>B.Com (Computer Applications)</strong> from <strong>Vikrama Simhapuri University, Nellore</strong>.
+          </p>
+          <p>
+            I have completed a <strong>7-month HR Internship</strong> at <strong>NextGen Learning &amp; Consulting Pvt. Ltd.</strong>, where I gained hands-on experience in end-to-end recruitment, candidate screening, interview coordination, employee onboarding, payroll assistance, attendance management, and HR documentation. This experience helped me develop a strong understanding of HR operations and employee lifecycle processes.
+          </p>
+          <p>
+            Along with HR expertise, I have developed additional skills in <strong>Digital Marketing</strong>, including basic knowledge of social media marketing, content creation, branding, SEO fundamentals, and online promotion strategies. I also have technical awareness in <strong>MS Excel, Google Sheets, SQL, Power BI, and Python basics</strong>, which support my analytical and reporting abilities.
+          </p>
+          <p>
+            I am a quick learner, detail-oriented, and highly motivated individual with strong skills in communication, teamwork, organization, and problem-solving.
+          </p>
+          <p>
+            I am currently seeking an <strong>entry-level opportunity</strong> where I can utilize my combined knowledge of HR, Digital Marketing, and data-related tools, contribute to organizational growth, and build a successful long-term career.
+          </p>
+          <div style="margin-top:1.5rem; display:flex; gap:0.8rem; flex-wrap:wrap; align-items:center;">
+            <a href="cv.html" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-file-lines"></i> View &amp; Download CV
+            </a>
+            <a href="mailto:rajupalemsuresh2002@gmail.com" class="btn btn-outline">
+              <i class="fa-solid fa-envelope"></i> Email Me
+            </a>
+          </div>
+        </div>
+        <div class="about-card glass-card" data-animate>
+          <div class="about-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3>HR, Marketing &amp; Data</h3>
+          <p>Hands-on HR operations, digital marketing fundamentals, and data analytics tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Work History</p>
+        <h2 class="section-title">My <span class="gradient-text">Experience</span></h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item" data-animate>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-header">
+              <div class="timeline-title-group">
+                <h3 class="timeline-role">HR Executive <span class="badge-intern">Internship</span></h3>
+                <p class="timeline-company">
+                  <i class="fa-solid fa-building"></i> NextGen Learning &amp; Consulting Pvt. Ltd.
+                </p>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-duration">
+                  <i class="fa-solid fa-clock"></i> 7 Months
+                </span>
+              </div>
+            </div>
+
+            <ul class="timeline-responsibilities">
+              <li>
+                <i class="fa-solid fa-check"></i>
+                Managed recruitment activities, including sourcing, screening, and shortlisting candidates based on job requirements.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                Coordinated interview schedules between candidates and hiring managers.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                Assisted in employee onboarding, induction, and joining formalities.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                Maintained employee records and updated HR databases with accuracy and confidentiality.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                Supported payroll processing, attendance management, and leave tracking.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                Prepared and maintained HR-related reports, documents, and employee records.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                Assisted in employee engagement initiatives and day-to-day HR administrative activities.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                Ensured compliance with company policies and HR procedures.
+              </li>
+            </ul>
+
+            <div class="timeline-tags">
+              <span class="tag">Recruitment</span>
+              <span class="tag">Onboarding</span>
+              <span class="tag">Payroll</span>
+              <span class="tag">HR Records</span>
+              <span class="tag">Employee Engagement</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="education section" id="education">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Academic Background</p>
+        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+      </div>
+
+      <div class="edu-grid">
+
+        <!-- MBA -->
+        <div class="edu-card glass-card" data-animate>
+          <div class="edu-icon edu-mba">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="edu-body">
+            <span class="edu-duration">
+              <i class="fa-solid fa-calendar-days"></i> Aug 2023 – May 2025
+            </span>
+            <h3 class="edu-degree">MBA <span class="edu-spec">(Finance &amp; HR)</span></h3>
+            <p class="edu-institution">
+              <i class="fa-solid fa-university"></i>
+              Jawaharlal Nehru Technological University, Anantapur
+            </p>
+          </div>
+        </div>
+
+        <!-- B.Com -->
+        <div class="edu-card glass-card" data-animate>
+          <div class="edu-icon edu-bcom">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <div class="edu-body">
+            <span class="edu-duration">
+              <i class="fa-solid fa-calendar-days"></i> Jul 2019 – May 2022
+            </span>
+            <h3 class="edu-degree">B.Com <span class="edu-spec">(Computer Applications)</span></h3>
+            <p class="edu-institution">
+              <i class="fa-solid fa-university"></i>
+              Vikrama Simhapuri University, Nellore
+            </p>
+          </div>
+        </div>
+
+        <!-- Intermediate -->
+        <div class="edu-card glass-card" data-animate>
+          <div class="edu-icon edu-inter">
+            <i class="fa-solid fa-school"></i>
+          </div>
+          <div class="edu-body">
+            <span class="edu-duration">
+              <i class="fa-solid fa-calendar-days"></i> Jun 2017 – May 2019
+            </span>
+            <h3 class="edu-degree">Intermediate</h3>
+            <p class="edu-institution">
+              <i class="fa-solid fa-university"></i>
+              Gowtham Junior College
+            </p>
+          </div>
+        </div>
+
+        <!-- SSC -->
+        <div class="edu-card glass-card" data-animate>
+          <div class="edu-icon edu-ssc">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="edu-body">
+            <span class="edu-duration">
+              <i class="fa-solid fa-calendar-days"></i> Jun 2016 – May 2017
+            </span>
+            <h3 class="edu-degree">SSC</h3>
+            <p class="edu-institution">
+              <i class="fa-solid fa-university"></i>
+              Mahatma Jyotiba Phule AP Backward Classes Welfare Residential School
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">What I Know</p>
+        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+      </div>
+
+      <!-- Technical Skills -->
+      <div class="skills-group-label">
+        <i class="fa-solid fa-laptop-code"></i> Technical Skills
+      </div>
+      <div class="skills-grid" style="margin-bottom: 3rem;">
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon excel"><i class="fa-solid fa-file-excel"></i></div>
+          <h3>MS Excel / Google Sheets</h3>
+          <p>Data entry, formatting, basic formulas, sorting & filtering for everyday data tasks.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:70%"></div></div>
+          <span class="skill-pct">Basic – Intermediate</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon tally"><i class="fa-solid fa-calculator"></i></div>
+          <h3>Tally Prime &amp; GST Basics</h3>
+          <p>Ledger creation, voucher entries, basic GST concepts, and financial documentation.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:65%"></div></div>
+          <span class="skill-pct">Foundational</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon stats"><i class="fa-solid fa-chart-bar"></i></div>
+          <h3>Data Analysis Concepts</h3>
+          <p>Understanding of data cleaning, interpretation, trends, and drawing insights from datasets.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:65%"></div></div>
+          <span class="skill-pct">Foundational</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon sql"><i class="fa-solid fa-database"></i></div>
+          <h3>SQL</h3>
+          <p>Basic querying, SELECT statements, filtering data and understanding relational databases.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:55%"></div></div>
+          <span class="skill-pct">Basic</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon powerbi"><i class="fa-solid fa-chart-pie"></i></div>
+          <h3>Power BI</h3>
+          <p>Building simple dashboards and reports, connecting data sources and creating visuals.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:55%"></div></div>
+          <span class="skill-pct">Basic</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon python"><i class="fa-brands fa-python"></i></div>
+          <h3>Python</h3>
+          <p>Introductory knowledge of Python for data analysis using Pandas and basic scripting.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:50%"></div></div>
+          <span class="skill-pct">Basic</span>
+        </div>
+
+      </div>
+
+      <!-- HR & Soft Skills -->
+      <div class="skills-group-label">
+        <i class="fa-solid fa-users"></i> HR &amp; Soft Skills
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon hr-recruit"><i class="fa-solid fa-magnifying-glass-arrow-right"></i></div>
+          <h3>Recruitment &amp; Screening</h3>
+          <p>End-to-end recruitment support — sourcing candidates, screening resumes, and shortlisting profiles.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:75%"></div></div>
+          <span class="skill-pct">Proficient</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon hr-interview"><i class="fa-solid fa-comments"></i></div>
+          <h3>Interview Coordination</h3>
+          <p>Scheduling and coordinating interviews between candidates and hiring managers efficiently.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:75%"></div></div>
+          <span class="skill-pct">Proficient</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon hr-onboard"><i class="fa-solid fa-user-plus"></i></div>
+          <h3>Employee Onboarding</h3>
+          <p>Assisting new hire processes — documentation, orientation support, and joining formalities.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:70%"></div></div>
+          <span class="skill-pct">Intermediate</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon hr-payroll"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+          <h3>Payroll Assistance</h3>
+          <p>Supporting payroll processing, attendance tracking, and maintaining salary records accurately.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:65%"></div></div>
+          <span class="skill-pct">Intermediate</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon hr-records"><i class="fa-solid fa-folder-open"></i></div>
+          <h3>Employee Record Management</h3>
+          <p>Maintaining and organising employee files, HR databases, and confidential personnel records.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:80%"></div></div>
+          <span class="skill-pct">Proficient</span>
+        </div>
+
+      </div>
+
+      <!-- Digital Marketing Skills -->
+      <div class="skills-group-label" style="margin-top: 3rem;">
+        <i class="fa-solid fa-bullhorn"></i> Digital Marketing Skills
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon dm-social"><i class="fa-solid fa-share-nodes"></i></div>
+          <h3>Social Media &amp; Promotion</h3>
+          <p>Online promotion strategies, audience reach, social media marketing, and brand engagement.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:65%"></div></div>
+          <span class="skill-pct">Intermediate</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon dm-content"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3>Content Creation &amp; Branding</h3>
+          <p>Developing engaging content, brand consistency, and creative promotional campaign assets.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:60%"></div></div>
+          <span class="skill-pct">Foundational</span>
+        </div>
+
+        <div class="skill-card glass-card" data-animate>
+          <div class="skill-icon dm-seo"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3>SEO Fundamentals</h3>
+          <p>Understanding search engine basics, keyword visibility, traffic growth, and online presence.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--pct:55%"></div></div>
+          <span class="skill-pct">Basic</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">What I've Built</p>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card glass-card" data-animate>
+          <div class="project-thumb thumb-amber">
+            <i class="fa-solid fa-coins"></i>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Finance</span>
+              <span class="tag">Academic Project</span>
+              <span class="tag">01/2025 – 02/2025</span>
+            </div>
+            <h3>Funds Flow Analysis – Chaitanya Chemicals Pvt. Ltd.</h3>
+            <p>Analyzed movement of funds between accounting periods, identifying sources and applications of capital to evaluate financial position and support long-term planning.</p>
+            <div class="project-links">
+              <a href="cv.html" target="_blank" class="btn-link btn-live"><i class="fa-solid fa-file-lines"></i> View in CV</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card glass-card" data-animate>
+          <div class="project-thumb thumb-blue">
+            <i class="fa-solid fa-chart-bar"></i>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">Excel</span>
+              <span class="tag">SQL</span>
+            </div>
+            <h3>Sales Dashboard</h3>
+            <p>Interactive Power BI dashboard analysing sales performance across regions, products, and time periods — reducing reporting time by 40%.</p>
+            <div class="project-links">
+              <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#" class="btn-link btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card glass-card" data-animate>
+          <div class="project-thumb thumb-purple">
+            <i class="fa-brands fa-python"></i>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Matplotlib</span>
+            </div>
+            <h3>Python Analysis Project</h3>
+            <p>End-to-end exploratory data analysis pipeline using Pandas and Seaborn, uncovering customer behaviour patterns from 100K+ records.</p>
+            <div class="project-links">
+              <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#" class="btn-link btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Notebook</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card glass-card" data-animate>
+          <div class="project-thumb thumb-green">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">SQL</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <h3>SQL Business Insights</h3>
+            <p>Complex multi-table queries to extract key business KPIs from a relational database — covering revenue, churn, and growth metrics.</p>
+            <div class="project-links">
+              <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#" class="btn-link btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Report</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Let's Talk</p>
+        <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-info" data-animate>
+          <h3>Open to exciting opportunities 🚀</h3>
+          <p>Whether you have a project in mind, a role to discuss, or just want to say hello — my inbox is always open!</p>
+
+          <div class="contact-items">
+            <a href="mailto:rajupalemsuresh2002@gmail.com" class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <span class="contact-item-label">Email</span>
+                <span class="contact-item-value">rajupalemsuresh2002@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+917036148003" class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <span class="contact-item-label">Phone</span>
+                <span class="contact-item-value">+91 7036148003, 7036148010</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span class="contact-item-label">Location</span>
+                <span class="contact-item-value"><strong>Pune</strong> (Current) &nbsp;·&nbsp; Hyderabad &nbsp;·&nbsp; Bangalore</span>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/suresh-rajupalem-921711248/" target="_blank" class="contact-item">
+              <div class="contact-item-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div>
+                <span class="contact-item-label">LinkedIn</span>
+                <span class="contact-item-value">linkedin.com/in/suresh-rajupalem</span>
+              </div>
+            </a>
+            <a href="cv.html" target="_blank" class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-file-pdf"></i></div>
+              <div>
+                <span class="contact-item-label">Curriculum Vitae</span>
+                <span class="contact-item-value">View &amp; Print Full CV</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form glass-card" data-animate onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="I'd love to work with you on..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-success" id="form-success">✅ Message sent! I'll get back to you soon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Designed & Built with ❤️ by <strong>Suresh Rajupalem</strong> &nbsp;·&nbsp; <span id="year"></span></p>
+      <div class="footer-socials">
+        <a href="mailto:rajupalemsuresh2002@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/suresh-rajupalem-921711248/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="cv.html" target="_blank" aria-label="CV"><i class="fa-solid fa-file-lines"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
