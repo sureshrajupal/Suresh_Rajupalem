@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sureshrajupal.github.io/Suresh-Rajupalem-portfolio/sitemap.xml
+Sitemap: https://sureshrajupal.github.io/Suresh_Rajupalem/sitemap.xml
