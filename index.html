@@ -16,55 +16,80 @@
       text-shadow: none !important;
     }
 
+    /* ── Global icon brightness boost ── */
     .fa-solid,
     .fa-regular,
     .fa-brands,
     .fa {
       opacity: 1 !important;
       visibility: visible !important;
-      color: inherit !important;
+      filter: brightness(1.5) !important;
     }
 
-    .hero-eyebrow i,
-    .about-icon i,
-    .skill-icon i,
-    .contact-item-icon i,
-    .timeline li i,
-    .footer-socials i,
-    .btn i,
-    .project-links i,
-    .nav-logo span,
-    .nav-links a,
-    .nav-cta,
-    .timeline-company i,
-    .stat-label,
-    .contact-item-label,
-    .contact-item-value,
-    .edu-duration i,
-    .edu-institution i,
-    .skills-group-label i {
-      opacity: 1 !important;
-      visibility: visible !important;
+    /* ── Skill icons – brighter colours ── */
+    .skill-icon { filter: brightness(1.4) !important; }
+    .skill-icon i { filter: brightness(1.3) !important; }
+
+    /* ── Skill colour themes – more vivid ── */
+    .python    { background: rgba(59,130,246,.25)  !important; color: #93c5fd !important; }
+    .sql       { background: rgba(245,158,11,.25)  !important; color: #fcd34d !important; }
+    .excel     { background: rgba(16,185,129,.25)  !important; color: #6ee7b7 !important; }
+    .powerbi   { background: rgba(240,109,79,.25)  !important; color: #ff9472 !important; }
+    .stats     { background: rgba(239,68,68,.25)   !important; color: #fca5a5 !important; }
+    .dataviz   { background: rgba(6,182,212,.25)   !important; color: #67e8f9 !important; }
+    .tally     { background: rgba(249,115,22,.25)  !important; color: #fdba74 !important; }
+
+    /* ── HR icon themes – more vivid ── */
+    .hr-recruit  { background: rgba(251,113,133,.25) !important; color: #fda4af !important; }
+    .hr-interview{ background: rgba(167,139,250,.25) !important; color: #c4b5fd !important; }
+    .hr-onboard  { background: rgba(52,211,153,.25)  !important; color: #6ee7b7 !important; }
+    .hr-payroll  { background: rgba(251,191,36,.25)  !important; color: #fde68a !important; }
+    .hr-records  { background: rgba(240,109,79,.25)  !important; color: #ff9472 !important; }
+
+    /* ── Digital Marketing themes – more vivid ── */
+    .dm-social   { background: rgba(236,72,153,.25)  !important; color: #f9a8d4 !important; }
+    .dm-content  { background: rgba(168,85,247,.25)  !important; color: #d8b4fe !important; }
+    .dm-seo      { background: rgba(14,165,233,.25)  !important; color: #7dd3fc !important; }
+
+    /* ── Education icons – more vivid ── */
+    .edu-mba   { background: rgba(240,109,79,.25) !important; color: #ff9472 !important; }
+    .edu-bcom  { background: rgba(6,182,212,.25)  !important; color: #67e8f9 !important; }
+    .edu-inter { background: rgba(245,158,11,.25) !important; color: #fcd34d !important; }
+    .edu-ssc   { background: rgba(16,185,129,.25) !important; color: #6ee7b7 !important; }
+
+    /* ── About section icons ── */
+    .about-icon { background: rgba(240,109,79,.25) !important; color: #ff9472 !important; }
+    .about-icon i { filter: brightness(1.4) !important; }
+
+    /* ── Contact item icons ── */
+    .contact-item-icon {
+      background: rgba(240,109,79,.25) !important;
+      color: #ff9472 !important;
+    }
+    .contact-item-icon i { filter: brightness(1.4) !important; }
+
+    /* ── Navbar & footer icons ── */
+    .footer-socials i { filter: brightness(1.5) !important; }
+    .nav-logo span    { filter: brightness(1.3) !important; }
+
+    /* ── Timeline check icons ── */
+    .timeline-responsibilities li i {
+      filter: brightness(1.5) !important;
     }
 
+    /* ── Skills group label icons ── */
+    .skills-group-label i { filter: brightness(1.5) !important; }
+
+    /* ── General visibility ── */
     .hero-desc,
-    .about-main p,
-    .about-card p,
-    .skill-card p,
-    .project-body p,
-    .contact-info p,
-    .footer p,
+    .about-main p, .about-card p,
+    .skill-card p, .project-body p,
+    .contact-info p, .footer p,
     .timeline-responsibilities li,
-    .contact-item-value,
-    .contact-item-label,
-    .form-group label,
-    .nav-links a,
-    .btn,
-    .timeline-company,
-    .timeline-duration,
-    .stat-label,
-    .edu-duration,
-    .edu-institution {
+    .contact-item-value, .contact-item-label,
+    .form-group label, .nav-links a, .btn,
+    .timeline-company, .timeline-duration,
+    .stat-label, .edu-duration, .edu-institution {
       opacity: 1 !important;
       visibility: visible !important;
       color: inherit !important;
