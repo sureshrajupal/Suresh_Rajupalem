@@ -10,6 +10,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body * {
+      -webkit-text-fill-color: initial;
+      text-shadow: none !important;
+    }
+
+    .fa-solid,
+    .fa-regular,
+    .fa-brands,
+    .fa {
+      opacity: 1 !important;
+      visibility: visible !important;
+      color: inherit !important;
+    }
+
+    .hero-eyebrow i,
+    .about-icon i,
+    .skill-icon i,
+    .contact-item-icon i,
+    .timeline li i,
+    .footer-socials i,
+    .btn i,
+    .project-links i,
+    .nav-logo span,
+    .nav-links a,
+    .nav-cta,
+    .timeline-company i,
+    .stat-label,
+    .contact-item-label,
+    .contact-item-value,
+    .edu-duration i,
+    .edu-institution i,
+    .skills-group-label i {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .hero-desc,
+    .about-main p,
+    .about-card p,
+    .skill-card p,
+    .project-body p,
+    .contact-info p,
+    .footer p,
+    .timeline-responsibilities li,
+    .contact-item-value,
+    .contact-item-label,
+    .form-group label,
+    .nav-links a,
+    .btn,
+    .timeline-company,
+    .timeline-duration,
+    .stat-label,
+    .edu-duration,
+    .edu-institution {
+      opacity: 1 !important;
+      visibility: visible !important;
+      color: inherit !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -29,9 +89,9 @@
         <a href="cv.html" target="_blank" class="btn btn-outline" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
           <i class="fa-solid fa-file-lines"></i> CV
         </a>
-        <a href="#contact" class="nav-cta">
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
           Hire Me
-        </a>
+        </button>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -47,7 +107,7 @@
       <div class="grid-overlay"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-eyebrow"><span class="dot"></span> Available for opportunities &nbsp;·&nbsp; <i class="fa-solid fa-location-dot" style="font-size:0.75rem;"></i> Pune, India</p>
+      <p class="hero-eyebrow"><span class="dot"></span> Available for opportunities &nbsp;·&nbsp; <i class="fa-solid fa-location-dot" style="font-size:0.75rem;"></i> Pune (Current) &nbsp;·&nbsp; Hyderabad &nbsp;·&nbsp; Bangalore</p>
       <h1 class="hero-title">
         Hi, I'm <span class="gradient-text">Suresh Rajupalem</span>
       </h1>
@@ -98,7 +158,7 @@
       <div class="about-grid">
         <div class="about-card glass-card" data-animate>
           <div class="about-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h3>MBA Graduate</h3>
+          <h3>MBA in Finance &amp; HR</h3>
           <p>Jawaharlal Nehru Technological University, Anantapur &amp; B.Com from VSU Nellore.</p>
         </div>
         <div class="about-main glass-card" data-animate>
@@ -227,7 +287,7 @@
             <span class="edu-duration">
               <i class="fa-solid fa-calendar-days"></i> Aug 2023 – May 2025
             </span>
-            <h3 class="edu-degree">MBA</h3>
+            <h3 class="edu-degree">MBA <span class="edu-spec">(Finance &amp; HR)</span></h3>
             <p class="edu-institution">
               <i class="fa-solid fa-university"></i>
               Jawaharlal Nehru Technological University, Anantapur
@@ -557,7 +617,7 @@
               <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
               <div>
                 <span class="contact-item-label">Location</span>
-                <span class="contact-item-value"><strong>Pune</strong> (Current) &nbsp;·&nbsp; <strong>Hyderabad</strong> &nbsp;·&nbsp; <strong>Bangalore</strong></span>
+                <span class="contact-item-value"><strong>Pune</strong> (Current) &nbsp;·&nbsp; Hyderabad &nbsp;·&nbsp; Bangalore</span>
               </div>
             </div>
             <a href="https://www.linkedin.com/in/suresh-rajupalem-921711248/" target="_blank" class="contact-item">
@@ -584,22 +644,18 @@
           </div>
         </div>
 
-        <form class="contact-form glass-card" data-animate id="contactForm">
+        <form class="contact-form glass-card" data-animate onsubmit="handleSubmit(event)">
           <div class="form-group">
             <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required />
+            <input type="text" id="name" placeholder="John Doe" required />
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="Enter your email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Contact Number</label>
-            <input type="tel" id="phone" placeholder="Enter your phone number" required />
+            <input type="email" id="email" placeholder="john@example.com" required />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+            <textarea id="message" rows="5" placeholder="I'd love to work with you on..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full">
             <i class="fa-solid fa-paper-plane"></i> Send Message
@@ -607,7 +663,7 @@
           <a href="https://forms.gle/1jMVRUAYBetpJEtLA" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-full" style="margin-top: 0.75rem; text-decoration: none;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Google Form Directly
           </a>
-          <p class="form-success" id="form-success">✅ Message sent and saved to your Google Sheet.</p>
+          <p class="form-success" id="form-success">✅ Message sent! I'll get back to you soon.</p>
         </form>
       </div>
     </div>
