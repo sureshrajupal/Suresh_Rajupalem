@@ -59,13 +59,13 @@ hamburger.addEventListener('click', () => {
   cvBtn.addEventListener('click', () => menu.remove());
   menu.appendChild(cvBtn);
 
-  const hireBtn = document.createElement('button');
+  const hireBtn = document.createElement('a');
+  hireBtn.href = 'https://docs.google.com/forms/d/13RzCHbU1k-b4Z_fHk0Ww1aWpX-jpYzcBuL_8Admenig/edit';
+  hireBtn.target = '_blank';
+  hireBtn.rel = 'noopener noreferrer';
   hireBtn.textContent = 'Hire Me';
   hireBtn.className = 'btn btn-primary';
-  hireBtn.addEventListener('click', () => {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    menu.remove();
-  });
+  hireBtn.addEventListener('click', () => menu.remove());
   menu.appendChild(hireBtn);
 
   document.body.appendChild(menu);
@@ -106,23 +106,61 @@ const observer = new IntersectionObserver((entries) => {
 animEls.forEach(el => observer.observe(el));
 
 /* ── 5. Contact form ── */
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn     = e.target.querySelector('button[type="submit"]');
-  const success = document.getElementById('form-success');
+const SHEET_WEB_APP_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
 
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+const contactForm = document.getElementById('contactForm');
 
-  // Simulate network delay
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-    btn.disabled  = false;
-    success.style.display = 'block';
-    e.target.reset();
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    setTimeout(() => { success.style.display = 'none'; }, 5000);
-  }, 1500);
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const messageInput = document.getElementById('message');
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const success = document.getElementById('form-success');
+
+    if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim() || !messageInput.value.trim()) {
+      const firstEmpty = [nameInput, emailInput, phoneInput, messageInput].find(input => !input.value.trim());
+      firstEmpty && firstEmpty.focus();
+      return;
+    }
+
+    if (!SHEET_WEB_APP_URL || SHEET_WEB_APP_URL.includes('PASTE_')) {
+      alert('Please add your Google Apps Script Web App URL in script.js');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+
+    try {
+      await fetch(SHEET_WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          phone: phoneInput.value.trim(),
+          message: messageInput.value.trim(),
+          submittedAt: new Date().toISOString()
+        })
+      });
+
+      success.style.display = 'block';
+      contactForm.reset();
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+      btn.disabled = false;
+    } catch (error) {
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+      btn.disabled = false;
+      alert('Something went wrong while saving the message. Please check the Google Sheet URL.');
+    }
+  });
 }
 
 /* ── 6. Footer year ── */
