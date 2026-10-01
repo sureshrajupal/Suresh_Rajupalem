@@ -10,76 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body, body * {
-      -webkit-text-fill-color: initial !important;
-      text-shadow: none !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      color: inherit !important;
-    }
-
-    .fa-solid,
-    .fa-regular,
-    .fa-brands,
-    .fa {
-      opacity: 1 !important;
-      visibility: visible !important;
-      color: inherit !important;
-      filter: brightness(1.4) saturate(1.3) contrast(1.15) !important;
-    }
-
-    .hero-eyebrow i,
-    .about-icon i,
-    .skill-icon i,
-    .contact-item-icon i,
-    .timeline li i,
-    .footer-socials i,
-    .btn i,
-    .project-links i,
-    .nav-logo span,
-    .nav-links a,
-    .nav-cta,
-    .timeline-company i,
-    .stat-label,
-    .contact-item-label,
-    .contact-item-value,
-    .edu-duration i,
-    .edu-institution i,
-    .skills-group-label i {
-      opacity: 1 !important;
-      visibility: visible !important;
-      filter: brightness(1.5) saturate(1.3) contrast(1.12) !important;
-    }
-
-    .hero-desc,
-    .about-main p,
-    .about-card p,
-    .skill-card p,
-    .project-body p,
-    .contact-info p,
-    .footer p,
-    .timeline-responsibilities li,
-    .contact-item-value,
-    .contact-item-label,
-    .form-group label,
-    .nav-links a,
-    .btn,
-    .timeline-company,
-    .timeline-duration,
-    .stat-label,
-    .edu-duration,
-    .edu-institution {
-      opacity: 1 !important;
-      visibility: visible !important;
-      color: #f8fbff !important;
-      text-shadow: none !important;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-logo">S<span>.</span></a>
@@ -91,8 +24,8 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div style="display: flex; gap: 0.75rem; align-items: center;">
-        <a href="cv.html" target="_blank" class="btn btn-outline" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+      <div class="nav-actions">
+        <a href="cv.html" target="_blank" class="btn btn-outline btn-small">
           <i class="fa-solid fa-file-lines"></i> CV
         </a>
         <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
@@ -105,7 +38,6 @@
     </div>
   </nav>
 
-  <!-- ===== HERO ===== -->
   <section class="hero" id="home">
     <div class="hero-bg">
       <div class="blob blob-1"></div>
@@ -113,7 +45,7 @@
       <div class="grid-overlay"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-eyebrow"><span class="dot"></span> Available for opportunities &nbsp;·&nbsp; <i class="fa-solid fa-location-dot" style="font-size:0.75rem;"></i> Pune, India</p>
+      <p class="hero-eyebrow"><span class="dot"></span> Available for opportunities &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Pune, India</p>
       <h1 class="hero-title">
         Hi, I'm <span class="gradient-text">Suresh Rajupalem</span>
       </h1>
@@ -122,7 +54,7 @@
         &nbsp;·&nbsp; HR Operations &nbsp;·&nbsp; Digital Marketing
       </p>
       <p class="hero-desc">
-        Business-minded professional with an MBA foundation, combining <strong>data analysis</strong>, <strong>people operations</strong>, and <strong>digital growth</strong> to turn information into [...]
+        Business-minded professional with an MBA foundation, combining <strong>data analysis</strong>, <strong>people operations</strong>, and <strong>digital growth</strong> to turn information into better business decisions and smoother workflows.
       </p>
       <div class="hero-btns">
         <a href="cv.html" target="_blank" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> View CV</a>
@@ -154,7 +86,6 @@
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
   <section class="about section" id="about">
     <div class="container">
       <div class="section-header">
@@ -169,18 +100,18 @@
         </div>
         <div class="about-main glass-card" data-animate>
           <p>
-            I am <strong>Suresh Rajupalem</strong>, an MBA graduate in <strong>Finance &amp; Human Resources</strong> with a practical foundation in business operations and data-driven decision making[...]
+            I am <strong>Suresh Rajupalem</strong>, an MBA graduate in <strong>Finance &amp; Human Resources</strong> with a practical foundation in business operations and data-driven decision making. I enjoy combining analytical thinking with people-focused execution to support teams, improve efficiency, and contribute to sustainable growth.
           </p>
           <p>
-            During my <strong>7-month HR internship</strong> at <strong>NextGen Learning &amp; Consulting Pvt. Ltd.</strong>, I gained hands-on experience in recruitment, onboarding, payroll assistanc[...]
+            During my <strong>7-month HR internship</strong> at <strong>NextGen Learning &amp; Consulting Pvt. Ltd.</strong>, I gained hands-on exposure in recruitment, onboarding, payroll support, records management, and employee communication. This gave me a strong understanding of how operational systems and human processes work together in a business environment.
           </p>
           <p>
-            I also developed practical exposure in <strong>digital marketing</strong> and <strong>data tools</strong>, including Excel, Google Sheets, SQL, Power BI, and Python basics. I enjoy working[...]
+            I also developed practical knowledge in <strong>digital marketing</strong> and <strong>data tools</strong>, including Excel, Google Sheets, SQL, Power BI, and Python basics. I enjoy working with structured information, identifying patterns, and turning them into useful insights that help teams move faster.
           </p>
           <p>
-            I am now looking for opportunities where I can apply my skills in <strong>HR operations, analysis, and growth-focused business support</strong> in a professional environment that values le[...]
+            I am now looking for opportunities where I can apply my skills in <strong>HR operations, analysis, and growth-focused business support</strong> in a professional environment that values learning, accountability, and measurable impact.
           </p>
-          <div style="margin-top:1.5rem; display:flex; gap:0.8rem; flex-wrap:wrap; align-items:center;">
+          <div class="about-actions">
             <a href="cv.html" target="_blank" class="btn btn-primary">
               <i class="fa-solid fa-file-lines"></i> View &amp; Download CV
             </a>
@@ -198,7 +129,6 @@
     </div>
   </section>
 
-  <!-- ===== EXPERIENCE ===== -->
   <section class="experience section" id="experience">
     <div class="container">
       <div class="section-header">
@@ -207,7 +137,6 @@
       </div>
 
       <div class="timeline">
-
         <div class="timeline-item" data-animate>
           <div class="timeline-dot"></div>
           <div class="timeline-card glass-card">
@@ -226,38 +155,14 @@
             </div>
 
             <ul class="timeline-responsibilities">
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Managed recruitment activities, including sourcing, screening, and shortlisting candidates based on job requirements.
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Coordinated interview schedules between candidates and hiring managers.
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Assisted in employee onboarding, induction, and joining formalities.
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Maintained employee records and updated HR databases with accuracy and confidentiality.
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Supported payroll processing, attendance management, and leave tracking.
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Prepared and maintained HR-related reports, documents, and employee records.
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Assisted in employee engagement initiatives and day-to-day HR administrative activities.
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                Ensured compliance with company policies and HR procedures.
-              </li>
+              <li><i class="fa-solid fa-check"></i> Managed recruitment activities, including sourcing, screening, and shortlisting candidates based on job requirements.</li>
+              <li><i class="fa-solid fa-check"></i> Coordinated interview schedules between candidates and hiring managers.</li>
+              <li><i class="fa-solid fa-check"></i> Assisted in employee onboarding, induction, and joining formalities.</li>
+              <li><i class="fa-solid fa-check"></i> Maintained employee records and updated HR databases with accuracy and confidentiality.</li>
+              <li><i class="fa-solid fa-check"></i> Supported payroll processing, attendance management, and leave tracking.</li>
+              <li><i class="fa-solid fa-check"></i> Prepared and maintained HR-related reports, documents, and employee records.</li>
+              <li><i class="fa-solid fa-check"></i> Assisted in employee engagement initiatives and day-to-day HR administrative activities.</li>
+              <li><i class="fa-solid fa-check"></i> Ensured compliance with company policies and HR procedures.</li>
             </ul>
 
             <div class="timeline-tags">
@@ -269,12 +174,10 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ===== EDUCATION ===== -->
   <section class="education section" id="education">
     <div class="container">
       <div class="section-header">
@@ -283,80 +186,45 @@
       </div>
 
       <div class="edu-grid">
-
-        <!-- MBA -->
         <div class="edu-card glass-card" data-animate>
-          <div class="edu-icon edu-mba">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
+          <div class="edu-icon edu-mba"><i class="fa-solid fa-graduation-cap"></i></div>
           <div class="edu-body">
-            <span class="edu-duration">
-              <i class="fa-solid fa-calendar-days"></i> Aug 2023 – May 2025
-            </span>
+            <span class="edu-duration"><i class="fa-solid fa-calendar-days"></i> Aug 2023 – May 2025</span>
             <h3 class="edu-degree">MBA <span class="edu-spec">(Finance &amp; HR)</span></h3>
-            <p class="edu-institution">
-              <i class="fa-solid fa-university"></i>
-              Jawaharlal Nehru Technological University, Anantapur
-            </p>
+            <p class="edu-institution"><i class="fa-solid fa-university"></i> Jawaharlal Nehru Technological University, Anantapur</p>
           </div>
         </div>
 
-        <!-- B.Com -->
         <div class="edu-card glass-card" data-animate>
-          <div class="edu-icon edu-bcom">
-            <i class="fa-solid fa-book-open"></i>
-          </div>
+          <div class="edu-icon edu-bcom"><i class="fa-solid fa-book-open"></i></div>
           <div class="edu-body">
-            <span class="edu-duration">
-              <i class="fa-solid fa-calendar-days"></i> Jul 2019 – May 2022
-            </span>
+            <span class="edu-duration"><i class="fa-solid fa-calendar-days"></i> Jul 2019 – May 2022</span>
             <h3 class="edu-degree">B.Com <span class="edu-spec">(Computer Applications)</span></h3>
-            <p class="edu-institution">
-              <i class="fa-solid fa-university"></i>
-              Vikrama Simhapuri University, Nellore
-            </p>
+            <p class="edu-institution"><i class="fa-solid fa-university"></i> Vikrama Simhapuri University, Nellore</p>
           </div>
         </div>
 
-        <!-- Intermediate -->
         <div class="edu-card glass-card" data-animate>
-          <div class="edu-icon edu-inter">
-            <i class="fa-solid fa-school"></i>
-          </div>
+          <div class="edu-icon edu-inter"><i class="fa-solid fa-school"></i></div>
           <div class="edu-body">
-            <span class="edu-duration">
-              <i class="fa-solid fa-calendar-days"></i> Jun 2017 – May 2019
-            </span>
+            <span class="edu-duration"><i class="fa-solid fa-calendar-days"></i> Jun 2017 – May 2019</span>
             <h3 class="edu-degree">Intermediate</h3>
-            <p class="edu-institution">
-              <i class="fa-solid fa-university"></i>
-              Gowtham Junior College
-            </p>
+            <p class="edu-institution"><i class="fa-solid fa-university"></i> Gowtham Junior College</p>
           </div>
         </div>
 
-        <!-- SSC -->
         <div class="edu-card glass-card" data-animate>
-          <div class="edu-icon edu-ssc">
-            <i class="fa-solid fa-award"></i>
-          </div>
+          <div class="edu-icon edu-ssc"><i class="fa-solid fa-award"></i></div>
           <div class="edu-body">
-            <span class="edu-duration">
-              <i class="fa-solid fa-calendar-days"></i> Jun 2016 – May 2017
-            </span>
+            <span class="edu-duration"><i class="fa-solid fa-calendar-days"></i> Jun 2016 – May 2017</span>
             <h3 class="edu-degree">SSC</h3>
-            <p class="edu-institution">
-              <i class="fa-solid fa-university"></i>
-              Mahatma Jyotiba Phule AP Backward Classes Welfare Residential School
-            </p>
+            <p class="edu-institution"><i class="fa-solid fa-university"></i> Mahatma Jyotiba Phule AP Backward Classes Welfare Residential School</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ===== SKILLS ===== -->
   <section class="skills section" id="skills">
     <div class="container">
       <div class="section-header">
@@ -364,12 +232,8 @@
         <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
       </div>
 
-      <!-- Technical Skills -->
-      <div class="skills-group-label">
-        <i class="fa-solid fa-laptop-code"></i> Technical Skills
-      </div>
+      <div class="skills-group-label"><i class="fa-solid fa-laptop-code"></i> Technical Skills</div>
       <div class="skills-grid" style="margin-bottom: 3rem;">
-
         <div class="skill-card glass-card" data-animate>
           <div class="skill-icon excel"><i class="fa-solid fa-file-excel"></i></div>
           <h3>MS Excel / Google Sheets</h3>
@@ -417,15 +281,10 @@
           <div class="skill-bar"><div class="skill-fill" style="--pct:50%"></div></div>
           <span class="skill-pct">Basic</span>
         </div>
-
       </div>
 
-      <!-- HR & Soft Skills -->
-      <div class="skills-group-label">
-        <i class="fa-solid fa-users"></i> HR &amp; Soft Skills
-      </div>
+      <div class="skills-group-label"><i class="fa-solid fa-users"></i> HR &amp; Soft Skills</div>
       <div class="skills-grid">
-
         <div class="skill-card glass-card" data-animate>
           <div class="skill-icon hr-recruit"><i class="fa-solid fa-magnifying-glass-arrow-right"></i></div>
           <h3>Recruitment &amp; Screening</h3>
@@ -465,15 +324,10 @@
           <div class="skill-bar"><div class="skill-fill" style="--pct:80%"></div></div>
           <span class="skill-pct">Proficient</span>
         </div>
-
       </div>
 
-      <!-- Digital Marketing Skills -->
-      <div class="skills-group-label" style="margin-top: 3rem;">
-        <i class="fa-solid fa-bullhorn"></i> Digital Marketing Skills
-      </div>
+      <div class="skills-group-label" style="margin-top: 3rem;"><i class="fa-solid fa-bullhorn"></i> Digital Marketing Skills</div>
       <div class="skills-grid">
-
         <div class="skill-card glass-card" data-animate>
           <div class="skill-icon dm-social"><i class="fa-solid fa-share-nodes"></i></div>
           <h3>Social Media &amp; Promotion</h3>
@@ -497,12 +351,10 @@
           <div class="skill-bar"><div class="skill-fill" style="--pct:55%"></div></div>
           <span class="skill-pct">Basic</span>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
   <section class="projects section" id="projects">
     <div class="container">
       <div class="section-header">
@@ -511,11 +363,8 @@
       </div>
 
       <div class="projects-grid">
-
         <article class="project-card glass-card" data-animate>
-          <div class="project-thumb thumb-amber">
-            <i class="fa-solid fa-coins"></i>
-          </div>
+          <div class="project-thumb thumb-amber"><i class="fa-solid fa-coins"></i></div>
           <div class="project-body">
             <div class="project-tags">
               <span class="tag">Finance</span>
@@ -531,9 +380,7 @@
         </article>
 
         <article class="project-card glass-card" data-animate>
-          <div class="project-thumb thumb-blue">
-            <i class="fa-solid fa-chart-bar"></i>
-          </div>
+          <div class="project-thumb thumb-blue"><i class="fa-solid fa-chart-bar"></i></div>
           <div class="project-body">
             <div class="project-tags">
               <span class="tag">Power BI</span>
@@ -550,9 +397,7 @@
         </article>
 
         <article class="project-card glass-card" data-animate>
-          <div class="project-thumb thumb-purple">
-            <i class="fa-brands fa-python"></i>
-          </div>
+          <div class="project-thumb thumb-purple"><i class="fa-brands fa-python"></i></div>
           <div class="project-body">
             <div class="project-tags">
               <span class="tag">Python</span>
@@ -569,9 +414,7 @@
         </article>
 
         <article class="project-card glass-card" data-animate>
-          <div class="project-thumb thumb-green">
-            <i class="fa-solid fa-database"></i>
-          </div>
+          <div class="project-thumb thumb-green"><i class="fa-solid fa-database"></i></div>
           <div class="project-body">
             <div class="project-tags">
               <span class="tag">SQL</span>
@@ -586,12 +429,10 @@
             </div>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
   <section class="contact section" id="contact">
     <div class="container">
       <div class="section-header">
@@ -643,7 +484,7 @@
           </div>
         </div>
 
-        <form class="contact-form glass-card" data-animate onsubmit="handleSubmit(event)">
+        <form class="contact-form glass-card" id="contactForm" data-animate>
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" placeholder="John Doe" required />
@@ -651,6 +492,10 @@
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 98765 43210" required />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
@@ -665,10 +510,9 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <p>Designed & Built with by <strong>Suresh Rajupalem</strong> &nbsp;·&nbsp; <span id="year"></span></p>
+      <p>Designed &amp; Built with by <strong>Suresh Rajupalem</strong> &nbsp;·&nbsp; <span id="year"></span></p>
       <div class="footer-socials">
         <a href="mailto:rajupalemsuresh2002@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/suresh-rajupalem-921711248/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -684,3 +528,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
