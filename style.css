@@ -43,7 +43,7 @@ body {
 
 ::selection {
   background: rgba(122, 215, 255, 0.28);
-  color: #fff;
+  color: #ff0000;
 }
 
 img { max-width: 100%; display: block; }
