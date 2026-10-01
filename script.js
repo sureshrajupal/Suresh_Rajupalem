@@ -2,6 +2,9 @@
    script.js  –  Portfolio interactions
    ========================================================= */
 
+// Initialize EmailJS (free tier - no setup needed beyond this)
+emailjs.init('YOUR_EMAILJS_PUBLIC_KEY'); // Get this from emailjs.com
+
 const navbar = document.getElementById('navbar');
 const backTop = document.getElementById('backToTop');
 
@@ -92,7 +95,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 animEls.forEach(el => observer.observe(el));
 
-const SHEET_WEB_APP_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+// Contact Form - EmailJS Integration
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
@@ -104,16 +107,11 @@ if (contactForm) {
     const phoneInput = document.getElementById('phone');
     const messageInput = document.getElementById('message');
     const btn = contactForm.querySelector('button[type="submit"]');
-    const success = document.getElementById('form-success');
 
+    // Validation
     if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim() || !messageInput.value.trim()) {
       const firstEmpty = [nameInput, emailInput, phoneInput, messageInput].find(input => !input.value.trim());
       firstEmpty && firstEmpty.focus();
-      return;
-    }
-
-    if (!SHEET_WEB_APP_URL || SHEET_WEB_APP_URL.includes('PASTE_')) {
-      alert('Please add your Google Apps Script Web App URL in script.js');
       return;
     }
 
@@ -121,27 +119,34 @@ if (contactForm) {
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
 
     try {
-      await fetch(SHEET_WEB_APP_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: nameInput.value.trim(),
-          email: emailInput.value.trim(),
-          phone: phoneInput.value.trim(),
-          message: messageInput.value.trim(),
-          submittedAt: new Date().toISOString()
-        })
+      // Send email via EmailJS
+      await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        from_name: nameInput.value.trim(),
+        from_email: emailInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        message: messageInput.value.trim(),
+        to_email: 'rajupalemsuresh2002@gmail.com'
       });
 
-      success.style.display = 'block';
+      // Success - show brief feedback
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
       contactForm.reset();
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-      btn.disabled = false;
+      
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+        btn.disabled = false;
+      }, 3000);
+
     } catch (error) {
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+      console.error('EmailJS Error:', error);
+      btn.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Failed to Send';
       btn.disabled = false;
-      alert('Something went wrong while saving the message. Please check the Google Sheet URL.');
+      
+      // Reset after 3 seconds
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+      }, 3000);
     }
   });
 }
@@ -180,4 +185,3 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
-
