@@ -52,6 +52,7 @@ hamburger.addEventListener('click', () => {
 
   const cvBtn = document.createElement('a');
   cvBtn.href = 'cv.html';
+  cvBtn.download = 'Suresh_Rajupalem_CV.html';
   cvBtn.target = '_blank';
   cvBtn.innerHTML = '<i class="fa-solid fa-file-lines"></i> View Full CV';
   cvBtn.className = 'btn btn-outline';
@@ -106,12 +107,10 @@ const observer = new IntersectionObserver((entries) => {
 animEls.forEach(el => observer.observe(el));
 
 /* ── 5. Contact form ── */
-const SHEET_WEB_APP_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
-
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const nameInput = document.getElementById('name');
@@ -121,45 +120,34 @@ if (contactForm) {
     const btn = contactForm.querySelector('button[type="submit"]');
     const success = document.getElementById('form-success');
 
-    if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim() || !messageInput.value.trim()) {
-      const firstEmpty = [nameInput, emailInput, phoneInput, messageInput].find(input => !input.value.trim());
-      firstEmpty && firstEmpty.focus();
+    const requiredFields = [nameInput, emailInput, phoneInput, messageInput];
+    const firstEmpty = requiredFields.find(input => !input.value.trim());
+
+    if (firstEmpty) {
+      firstEmpty.focus();
       return;
     }
 
-    if (!SHEET_WEB_APP_URL || SHEET_WEB_APP_URL.includes('PASTE_')) {
-      alert('Please add your Google Apps Script Web App URL in script.js');
-      return;
-    }
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const message = messageInput.value.trim();
+    const emailRecipient = 'rajupalemsuresh2002@gmail.com';
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+    );
 
     btn.disabled = true;
-    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Preparing…';
 
-    try {
-      await fetch(SHEET_WEB_APP_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: nameInput.value.trim(),
-          email: emailInput.value.trim(),
-          phone: phoneInput.value.trim(),
-          message: messageInput.value.trim(),
-          submittedAt: new Date().toISOString()
-        })
-      });
+    window.location.href = `mailto:${emailRecipient}?subject=${subject}&body=${body}`;
 
-      success.style.display = 'block';
-      contactForm.reset();
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-      btn.disabled = false;
-    } catch (error) {
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-      btn.disabled = false;
-      alert('Something went wrong while saving the message. Please check the Google Sheet URL.');
-    }
+    success.style.display = 'block';
+    success.textContent = '✅ Your email client is opening with the message ready to send.';
+    contactForm.reset();
+    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+    btn.disabled = false;
   });
 }
 

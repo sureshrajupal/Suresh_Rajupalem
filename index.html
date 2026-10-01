@@ -20,15 +20,43 @@
     .fa-solid,
     .fa-regular,
     .fa-brands,
-    .fa {
+    .fa,
+    .skill-icon i,
+    .about-icon i,
+    .contact-item-icon i,
+    .edu-icon i,
+    .skills-group-label i,
+    .footer-socials i,
+    .timeline-responsibilities li i,
+    .btn i {
       opacity: 1 !important;
       visibility: visible !important;
-      filter: brightness(1.5) !important;
+      filter: brightness(1.9) saturate(1.3) !important;
+      color: inherit !important;
+    }
+
+    .about-main p,
+    .about-card p,
+    .skill-card p,
+    .project-body p,
+    .contact-info p,
+    .contact-item-label,
+    .contact-item-value,
+    .timeline-responsibilities li,
+    .edu-meta,
+    .stat-label,
+    .footer p,
+    .hero-desc,
+    .nav-links a,
+    .form-group label {
+      color: #f7fbff !important;
+      opacity: 1 !important;
+      text-shadow: none !important;
     }
 
     /* ── Skill icons – brighter colours ── */
     .skill-icon { filter: brightness(1.4) !important; }
-    .skill-icon i { filter: brightness(1.3) !important; }
+    .skill-icon i { filter: brightness(1.5) drop-shadow(0 1px 4px rgba(255,255,255,.32)) !important; }
 
     /* ── Skill colour themes – more vivid ── */
     .python    { background: rgba(59,130,246,.25)  !important; color: #93c5fd !important; }
@@ -59,14 +87,14 @@
 
     /* ── About section icons ── */
     .about-icon { background: rgba(240,109,79,.25) !important; color: #ff9472 !important; }
-    .about-icon i { filter: brightness(1.4) !important; }
+    .about-icon i { filter: brightness(1.5) drop-shadow(0 1px 4px rgba(255,255,255,.32)) !important; }
 
     /* ── Contact item icons ── */
     .contact-item-icon {
       background: rgba(240,109,79,.25) !important;
       color: #ff9472 !important;
     }
-    .contact-item-icon i { filter: brightness(1.4) !important; }
+    .contact-item-icon i { filter: brightness(1.5) drop-shadow(0 1px 4px rgba(255,255,255,.32)) !important; }
 
     /* ── Navbar & footer icons ── */
     .footer-socials i { filter: brightness(1.5) !important; }
@@ -111,8 +139,11 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div style="display: flex; gap: 0.75rem; align-items: center;">
-        <a href="cv.html" target="_blank" class="btn btn-outline" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+        <a href="cv.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
           <i class="fa-solid fa-file-lines"></i> CV
+        </a>
+        <a href="cv.html" download="Suresh_Rajupalem_CV.html" class="btn btn-outline" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+          <i class="fa-solid fa-download"></i> Download
         </a>
         <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
           Hire Me
@@ -132,21 +163,24 @@
       <div class="grid-overlay"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-eyebrow"><span class="dot"></span> Available for opportunities &nbsp;·&nbsp; <i class="fa-solid fa-location-dot" style="font-size:0.75rem;"></i> Pune (Current) &nbsp;·&nbsp; Hyderabad &nbsp;·&nbsp; Bangalore</p>
+      <p class="hero-eyebrow"><span class="dot"></span> Updated for 2026 opportunities &nbsp;·&nbsp; <i class="fa-solid fa-location-dot" style="font-size:0.75rem;"></i> Pune (Current) &nbsp;·&nbsp; Hyderabad &nbsp;·&nbsp; Bangalore</p>
       <h1 class="hero-title">
         Hi, I'm <span class="gradient-text">Suresh Rajupalem</span>
       </h1>
       <p class="hero-subtitle">
         <span class="role-cycle" id="roleCycle">Data Analyst</span>
-        &nbsp;·&nbsp; HR Operations &nbsp;·&nbsp; Digital Marketing
+        &nbsp;·&nbsp; HR Operations &nbsp;·&nbsp; Business Support
       </p>
       <p class="hero-desc">
         Business-minded professional with an MBA foundation, combining <strong>data analysis</strong>, <strong>people operations</strong>, and <strong>digital growth</strong> to turn information into action.
       </p>
+      <p class="hero-desc" style="margin-top: 0.25rem; opacity: 0.9;">
+        Currently open to <strong>Data Analyst</strong>, <strong>HR Operations</strong>, and <strong>Business Support</strong> opportunities across India.
+      </p>
       <div class="hero-btns">
-        <a href="cv.html" target="_blank" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> View CV</a>
-        <a href="#projects" class="btn btn-outline">Projects</a>
-        <a href="https://forms.gle/1jMVRUAYBetpJEtLA" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+        <a href="cv.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> View CV</a>
+        <a href="cv.html" download="Suresh_Rajupalem_CV.html" class="btn btn-outline"><i class="fa-solid fa-download"></i> Download CV</a>
+        <a href="mailto:rajupalemsuresh2002@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Suresh%2C%0A%0AI'm%20interested%20in%20your%20profile%20and%20would%20like%20to%20connect.%0A%0ARegards%2C%0A[Your%20Name]" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Email Me</a>
       </div>
       <div class="hero-stats">
         <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Projects</span></div>
@@ -200,10 +234,13 @@
             I am now looking for opportunities where I can apply my skills in <strong>HR operations, analysis, and growth-focused business support</strong> in a professional environment that values learning, teamwork, and measurable impact.
           </p>
           <div style="margin-top:1.5rem; display:flex; gap:0.8rem; flex-wrap:wrap; align-items:center;">
-            <a href="cv.html" target="_blank" class="btn btn-primary">
-              <i class="fa-solid fa-file-lines"></i> View &amp; Download CV
+            <a href="cv.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fa-solid fa-file-lines"></i> View CV
             </a>
-            <a href="mailto:rajupalemsuresh2002@gmail.com" class="btn btn-outline">
+            <a href="cv.html" download="Suresh_Rajupalem_CV.html" class="btn btn-outline">
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
+            <a href="mailto:rajupalemsuresh2002@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Suresh%2C%0A%0AI'm%20interested%20in%20your%20profile%20and%20would%20like%20to%20connect.%0A%0ARegards%2C%0A[Your%20Name]" class="btn btn-outline">
               <i class="fa-solid fa-envelope"></i> Email Me
             </a>
           </div>
@@ -669,7 +706,7 @@
           </div>
         </div>
 
-        <form class="contact-form glass-card" data-animate onsubmit="handleSubmit(event)">
+        <form class="contact-form glass-card" id="contactForm" data-animate>
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" placeholder="John Doe" required />
@@ -679,16 +716,20 @@
             <input type="email" id="email" placeholder="john@example.com" required />
           </div>
           <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 98765 43210" required />
+          </div>
+          <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" rows="5" placeholder="I'd love to work with you on..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full">
             <i class="fa-solid fa-paper-plane"></i> Send Message
           </button>
-          <a href="https://forms.gle/1jMVRUAYBetpJEtLA" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-full" style="margin-top: 0.75rem; text-decoration: none;">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Google Form Directly
+          <a href="mailto:rajupalemsuresh2002@gmail.com" class="btn btn-outline btn-full" style="margin-top: 0.75rem; text-decoration: none;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Email Directly
           </a>
-          <p class="form-success" id="form-success">✅ Message sent! I'll get back to you soon.</p>
+          <p class="form-success" id="form-success">✅ Your email client will open with your message ready to send.</p>
         </form>
       </div>
     </div>
