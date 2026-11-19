@@ -108,7 +108,6 @@ if (contactForm) {
     const messageInput = document.getElementById('message');
     const btn = contactForm.querySelector('button[type="submit"]');
 
-    // Validation
     if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim() || !messageInput.value.trim()) {
       const firstEmpty = [nameInput, emailInput, phoneInput, messageInput].find(input => !input.value.trim());
       firstEmpty && firstEmpty.focus();
@@ -119,7 +118,6 @@ if (contactForm) {
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
 
     try {
-      // Send email via EmailJS
       await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
         from_name: nameInput.value.trim(),
         from_email: emailInput.value.trim(),
@@ -128,11 +126,8 @@ if (contactForm) {
         to_email: 'rajupalemsuresh2002@gmail.com'
       });
 
-      // Success - show brief feedback
       btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
       contactForm.reset();
-      
-      // Reset button after 3 seconds
       setTimeout(() => {
         btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
         btn.disabled = false;
@@ -142,8 +137,6 @@ if (contactForm) {
       console.error('EmailJS Error:', error);
       btn.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Failed to Send';
       btn.disabled = false;
-      
-      // Reset after 3 seconds
       setTimeout(() => {
         btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
       }, 3000);
@@ -186,12 +179,16 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Remove finance-specialization details from the visible portfolio.
+// MBA specialization and portfolio-wide Finance-to-Marketing update.
 (() => {
-  const textReplacements = [
-    ['Finance and Human Resources', 'Human Resources'],
-    ['MBA, Finance & HR', 'MBA, HR'],
-    ['MBA <span class="edu-spec">(Finance &amp; HR)</span>', 'MBA']
+  const replacements = [
+    ['Finance and Human Resources', 'Human Resources and Marketing'],
+    ['Finance & Human Resources', 'Human Resources & Marketing'],
+    ['MBA, Finance & HR', 'MBA, HR & Marketing'],
+    ['MBA (Finance & HR)', 'MBA (HR & Marketing)'],
+    ['Finance', 'Marketing'],
+    ['financial', 'marketing'],
+    ['Funds Flow Analysis', 'Marketing Campaign Analysis']
   ];
 
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -200,28 +197,53 @@ document.head.appendChild(style);
 
   textNodes.forEach(node => {
     let text = node.textContent;
-    textReplacements.forEach(([from, to]) => {
+    replacements.forEach(([from, to]) => {
       text = text.replaceAll(from, to);
     });
     node.textContent = text;
   });
 
   document.querySelectorAll('.edu-spec').forEach(el => {
-    if (/Finance/i.test(el.textContent) || /HR/i.test(el.textContent)) el.remove();
+    el.textContent = ' (HR & Marketing)';
   });
 
   document.querySelectorAll('.about-highlight').forEach(card => {
-    if (/Finance/i.test(card.textContent)) {
-      const heading = card.querySelector('h3');
-      if (heading) heading.textContent = heading.textContent.replace(/,\s*Finance/i, '').replace(/Finance\s*&\s*HR/i, 'HR');
+    const heading = card.querySelector('h3');
+    if (heading && /Marketing/i.test(card.textContent)) {
+      heading.textContent = heading.textContent
+        .replace(/Finance and Human Resources/gi, 'Human Resources and Marketing')
+        .replace(/Finance &amp; HR/gi, 'HR & Marketing')
+        .replace(/Finance & HR/gi, 'HR & Marketing')
+        .replace(/MBA, Marketing &amp; HR/gi, 'MBA, HR & Marketing')
+        .replace(/MBA, Finance & HR/gi, 'MBA, HR & Marketing');
     }
   });
 
   document.querySelectorAll('.project-card').forEach(card => {
-    if (/Funds Flow Analysis|Finance/i.test(card.textContent)) card.remove();
+    if (/Marketing Campaign Analysis|Marketing/i.test(card.textContent)) {
+      const title = card.querySelector('h3');
+      const description = card.querySelector('p');
+      const tags = card.querySelector('.project-tags');
+      if (title && title.textContent.includes('Marketing Campaign Analysis')) {
+        title.textContent = 'Marketing Campaign Analysis';
+      }
+      if (description && /capital movement|marketing sources/i.test(description.textContent)) {
+        description.textContent = 'Reviewed digital marketing campaigns and audience engagement to identify effective channels, performance insights, and opportunities for brand growth.';
+      }
+      if (tags) {
+        tags.innerHTML = '<span class="tag">Marketing</span><span class="tag">Campaign Analysis</span><span class="tag">Academic</span>';
+      }
+    }
   });
 
   document.querySelectorAll('.skill-card').forEach(card => {
-    if (/Tally Prime|GST Basics|financial documentation/i.test(card.textContent)) card.remove();
+    if (/Tally Prime|GST Basics|marketing documentation/i.test(card.textContent)) {
+      const title = card.querySelector('h4');
+      const description = card.querySelector('p');
+      if (title) title.textContent = 'Digital Marketing Fundamentals';
+      if (description) description.textContent = 'Understanding audience targeting, campaign planning, social media promotion, and digital marketing documentation.';
+      const icon = card.querySelector('.skill-icon');
+      if (icon) icon.className = 'skill-icon dm-social';
+    }
   });
 })();
