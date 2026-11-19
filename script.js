@@ -185,3 +185,43 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// Remove finance-specialization details from the visible portfolio.
+(() => {
+  const textReplacements = [
+    ['Finance and Human Resources', 'Human Resources'],
+    ['MBA, Finance & HR', 'MBA, HR'],
+    ['MBA <span class="edu-spec">(Finance &amp; HR)</span>', 'MBA']
+  ];
+
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+  textNodes.forEach(node => {
+    let text = node.textContent;
+    textReplacements.forEach(([from, to]) => {
+      text = text.replaceAll(from, to);
+    });
+    node.textContent = text;
+  });
+
+  document.querySelectorAll('.edu-spec').forEach(el => {
+    if (/Finance/i.test(el.textContent) || /HR/i.test(el.textContent)) el.remove();
+  });
+
+  document.querySelectorAll('.about-highlight').forEach(card => {
+    if (/Finance/i.test(card.textContent)) {
+      const heading = card.querySelector('h3');
+      if (heading) heading.textContent = heading.textContent.replace(/,\s*Finance/i, '').replace(/Finance\s*&\s*HR/i, 'HR');
+    }
+  });
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    if (/Funds Flow Analysis|Finance/i.test(card.textContent)) card.remove();
+  });
+
+  document.querySelectorAll('.skill-card').forEach(card => {
+    if (/Tally Prime|GST Basics|financial documentation/i.test(card.textContent)) card.remove();
+  });
+})();
