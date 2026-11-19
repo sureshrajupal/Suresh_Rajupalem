@@ -2,8 +2,7 @@
    script.js  –  Portfolio interactions
    ========================================================= */
 
-// Initialize EmailJS (free tier - no setup needed beyond this)
-emailjs.init('YOUR_EMAILJS_PUBLIC_KEY'); // Get this from emailjs.com
+emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');
 
 const navbar = document.getElementById('navbar');
 const backTop = document.getElementById('backToTop');
@@ -35,8 +34,7 @@ if (hamburger) {
       animation: fadeIn .2s ease;
     `;
 
-    const links = ['About', 'Experience', 'Education', 'Skills', 'Projects', 'Contact'];
-    links.forEach(text => {
+    ['About', 'Experience', 'Education', 'Skills', 'Projects', 'Contact'].forEach(text => {
       const a = document.createElement('a');
       a.href = `#${text.toLowerCase()}`;
       a.textContent = text;
@@ -82,22 +80,18 @@ window.addEventListener('scroll', highlightNav);
 
 const animEls = document.querySelectorAll('[data-animate]');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
       const siblings = [...entry.target.parentElement.querySelectorAll('[data-animate]')];
       const idx = siblings.indexOf(entry.target);
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, idx * 120);
+      setTimeout(() => entry.target.classList.add('visible'), idx * 120);
       observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.12 });
 animEls.forEach(el => observer.observe(el));
 
-// Contact Form - EmailJS Integration
 const contactForm = document.getElementById('contactForm');
-
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -132,7 +126,6 @@ if (contactForm) {
         btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
         btn.disabled = false;
       }, 3000);
-
     } catch (error) {
       console.error('EmailJS Error:', error);
       btn.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Failed to Send';
@@ -146,28 +139,15 @@ if (contactForm) {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Keep the hero subtitle static: remove the rotating Data Analyst role.
 const roleCycleEl = document.getElementById('roleCycle');
 if (roleCycleEl) {
-  const roles = ['Data Analyst', 'HR Executive', 'Digital Marketer'];
-  let roleIndex = 0;
-
-  const cycleRole = () => {
-    roleCycleEl.style.transition = 'opacity .4s ease, transform .4s ease';
-    roleCycleEl.style.opacity = '0';
-    roleCycleEl.style.transform = 'translateY(-8px)';
-
-    setTimeout(() => {
-      roleIndex = (roleIndex + 1) % roles.length;
-      roleCycleEl.textContent = roles[roleIndex];
-      roleCycleEl.style.transform = 'translateY(8px)';
-      setTimeout(() => {
-        roleCycleEl.style.opacity = '1';
-        roleCycleEl.style.transform = 'translateY(0)';
-      }, 50);
-    }, 400);
-  };
-
-  setInterval(cycleRole, 2500);
+  const heroSubtitle = roleCycleEl.closest('.hero-subtitle');
+  if (heroSubtitle) {
+    heroSubtitle.textContent = 'HR Operations · Digital Marketing';
+  } else {
+    roleCycleEl.remove();
+  }
 }
 
 const style = document.createElement('style');
@@ -179,7 +159,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// MBA specialization and portfolio-wide Finance-to-Marketing update.
+// MBA specialization and portfolio-wide marketing update.
 (() => {
   const replacements = [
     ['Finance and Human Resources', 'Human Resources and Marketing'],
@@ -207,43 +187,14 @@ document.head.appendChild(style);
     el.textContent = ' (HR & Marketing)';
   });
 
-  document.querySelectorAll('.about-highlight').forEach(card => {
-    const heading = card.querySelector('h3');
-    if (heading && /Marketing/i.test(card.textContent)) {
-      heading.textContent = heading.textContent
-        .replace(/Finance and Human Resources/gi, 'Human Resources and Marketing')
-        .replace(/Finance &amp; HR/gi, 'HR & Marketing')
-        .replace(/Finance & HR/gi, 'HR & Marketing')
-        .replace(/MBA, Marketing &amp; HR/gi, 'MBA, HR & Marketing')
-        .replace(/MBA, Finance & HR/gi, 'MBA, HR & Marketing');
-    }
-  });
-
   document.querySelectorAll('.project-card').forEach(card => {
     if (/Marketing Campaign Analysis|Marketing/i.test(card.textContent)) {
       const title = card.querySelector('h3');
       const description = card.querySelector('p');
       const tags = card.querySelector('.project-tags');
-      if (title && title.textContent.includes('Marketing Campaign Analysis')) {
-        title.textContent = 'Marketing Campaign Analysis';
-      }
-      if (description && /capital movement|marketing sources/i.test(description.textContent)) {
-        description.textContent = 'Reviewed digital marketing campaigns and audience engagement to identify effective channels, performance insights, and opportunities for brand growth.';
-      }
-      if (tags) {
-        tags.innerHTML = '<span class="tag">Marketing</span><span class="tag">Campaign Analysis</span><span class="tag">Academic</span>';
-      }
-    }
-  });
-
-  document.querySelectorAll('.skill-card').forEach(card => {
-    if (/Tally Prime|GST Basics|marketing documentation/i.test(card.textContent)) {
-      const title = card.querySelector('h4');
-      const description = card.querySelector('p');
-      if (title) title.textContent = 'Digital Marketing Fundamentals';
-      if (description) description.textContent = 'Understanding audience targeting, campaign planning, social media promotion, and digital marketing documentation.';
-      const icon = card.querySelector('.skill-icon');
-      if (icon) icon.className = 'skill-icon dm-social';
+      if (title) title.textContent = 'Marketing Campaign Analysis';
+      if (description) description.textContent = 'Reviewed digital marketing campaigns and audience engagement to identify effective channels, performance insights, and opportunities for brand growth.';
+      if (tags) tags.innerHTML = '<span class="tag">Marketing</span><span class="tag">Campaign Analysis</span><span class="tag">Academic</span>';
     }
   });
 })();
